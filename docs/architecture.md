@@ -9,10 +9,16 @@
 - ParameterMapper converts expression (omics) to site energies and couplings.
 - Gamma schedule sweep generates ENAQT curves for cohort analyses.
 
+## Layer C — Experience Layer (Streamlit Dashboard)
+- `streamlit_app.py` orchestrates inputs, sweeps, and visualisations.
+- Supports bundled data for validation and custom uploads for real cohorts.
+- Provides download-ready metrics payloads for downstream APIs and analytics.
+
 ## Pipelines
 1. Ingest omics → ParameterMapper → Hamiltonian.
 2. Run QuantumLifeEngine parameter sweep to produce metrics per gamma.
 3. Aggregate via `compute_summary_metrics` for cohort-level comparison.
+4. Visualise via Streamlit dashboard; export JSON for APIs or Render deployments.
 
 ## Artefacts
 - `metrics.json`: run-level metrics.

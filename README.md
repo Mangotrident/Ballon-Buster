@@ -13,6 +13,7 @@ described in the product vision.
 - Gamma noise sweeps that reproduce ENAQT-like energy-transfer profiles.
 - Cohort-ready summary metrics (ETE peak, coherence lifetime, QLS).
 - CLI for end-to-end simulation on curated mitochondrial graphs.
+- Streamlit dashboard for interactive exploration and deployment.
 
 ## Quickstart
 
@@ -32,7 +33,14 @@ described in the product vision.
      --output examples/sample_metrics.json
    ```
 
-3. Inspect the resulting metrics in `examples/sample_metrics.json`.
+3. Launch the interactive dashboard (ideal for Streamlit Cloud, Render, or local demos):
+
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+
+   Use the sidebar to toggle between bundled data and your own uploads. After a run you can download
+   the resulting metrics JSON for downstream analyses or API integration.
 
 ## Tests
 
@@ -49,6 +57,7 @@ pytest
 - `quantum_bioenergetics/analysis` – Cohort-level metric aggregation.
 - `data/` – Input graphs, parameters, and expression templates.
 - `examples/` – Generated artefacts and notebook-ready outputs.
+- `streamlit_app.py` – Streamlit dashboard for the simulation stack.
 - `tests/` – Physics validation tests.
 
 ## License
