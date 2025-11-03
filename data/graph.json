@@ -1,0 +1,11 @@
+{
+  "CI": ["CI_link", "CII"],
+  "CI_link": ["CIII"],
+  "CII": ["CIII"],
+  "CIII": ["CIV", "CoQ"],
+  "CoQ": ["CIV"],
+  "CIV": ["Sink"],
+  "ATP": ["Sink"],
+  "Buffer": ["ATP"],
+  "Sink": []
+}

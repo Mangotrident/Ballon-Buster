@@ -1,0 +1,65 @@
+# Quantum Bioenergetics Mapping
+
+Quantum Bioenergetics Mapping is an applied-physics software stack that
+simulates energy transport in mitochondrial networks and converts patient
+omics into first-principles biomarkers. The project implements the Quantum
+Life Engine (QLE) and Quantum-Metabolic Network (Q-MNet) foundations
+described in the product vision.
+
+## Features
+
+- Lindblad master equation solver tailored for excitation transport.
+- Automatic mapping from gene expression to Hamiltonian parameters.
+- Gamma noise sweeps that reproduce ENAQT-like energy-transfer profiles.
+- Cohort-ready summary metrics (ETE peak, coherence lifetime, QLS).
+- CLI for end-to-end simulation on curated mitochondrial graphs.
+- Streamlit dashboard for interactive exploration and deployment.
+
+## Quickstart
+
+1. Install dependencies (preferably in a virtual environment):
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Run the sample simulation:
+
+   ```bash
+   python cli.py simulate \
+     --graph data/graph.json \
+     --expression data/sample_expression.csv \
+     --params data/params.yaml \
+     --output examples/sample_metrics.json
+   ```
+
+3. Launch the interactive dashboard (ideal for Streamlit Cloud, Render, or local demos):
+
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+
+   Use the sidebar to toggle between bundled data and your own uploads. After a run you can download
+   the resulting metrics JSON for downstream analyses or API integration.
+
+## Tests
+
+Execute the unit tests to validate trace preservation and ENAQT behaviour:
+
+```bash
+pytest
+```
+
+## Repository layout
+
+- `quantum_bioenergetics/engine` – Quantum Life Engine implementation.
+- `quantum_bioenergetics/data` – Omics-to-physics mapping utilities.
+- `quantum_bioenergetics/analysis` – Cohort-level metric aggregation.
+- `data/` – Input graphs, parameters, and expression templates.
+- `examples/` – Generated artefacts and notebook-ready outputs.
+- `streamlit_app.py` – Streamlit dashboard for the simulation stack.
+- `tests/` – Physics validation tests.
+
+## License
+
+MIT License

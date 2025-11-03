@@ -1,0 +1,30 @@
+mapping:
+  epsilon_0: 0.2
+  alpha: 0.015
+  j_0: 0.02
+  j_max: 0.05
+  gamma_min: 0.0
+  gamma_max: 0.05
+node_genes:
+  CI:
+    - NDUFS1
+    - NDUFV1
+  CI_link:
+    - NDUFA9
+  CII:
+    - SDHA
+  CIII:
+    - UQCRC1
+  CoQ:
+    - COQ6
+  CIV:
+    - COX4I1
+  ATP:
+    - ATP5F1A
+  Buffer:
+    - SLC25A4
+  Sink:
+    - CYCS
+sink_rate: 0.1
+loss_rate: 0.01
+sink_site: CIV
